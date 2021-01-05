@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">ShoeStore</string>
+
+    <!-- Hints -->
+    <string name="hint_email">Email:</string>
+    <string name="hint_password">Password:</string>
+
+    <!-- Buttons -->
+    <string name="button_sign_in">Sign In</string>
+    <string name="button_sign_up">Sign Up</string>
+
+
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
