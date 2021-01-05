@@ -8,9 +8,14 @@
     <!-- Buttons -->
     <string name="button_sign_in">Sign In</string>
     <string name="button_sign_up">Sign Up</string>
+    <string name="button_continue">Continue</string>
 
+    <!-- Screen headers -->
+    <string name="header_welcome">Welcome</string>
 
-
+    <!-- Content -->
+    <string name="welcome_01">In this project, students will apply their skills in building layouts and navigation files by building a Shoe Store app. They will build an app with four screens.</string>
+    <string name="welcome_02">While the login and onboarding pages will not do anything, the user will need to save the login state so that the login and onboarding pages do not show again.</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
