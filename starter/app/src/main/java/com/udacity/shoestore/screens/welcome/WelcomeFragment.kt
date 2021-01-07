@@ -5,7 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import com.udacity.shoestore.R
+import com.udacity.shoestore.databinding.FragmentInstructionsBinding
+import com.udacity.shoestore.databinding.FragmentWelcomeBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,7 +39,15 @@ class WelcomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_welcome, container, false)
+        val binding = DataBindingUtil.inflate<FragmentWelcomeBinding>(
+            inflater, R.layout.fragment_welcome, container, false
+        )
+
+        binding.buttonContinueToInstructions.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.action_welcomeFragment_to_instructionsFragment)
+        )
+
+        return binding.root
     }
 
     companion object {

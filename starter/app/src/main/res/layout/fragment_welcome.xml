@@ -1,31 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="@dimen/default_margin"
-    android:orientation="vertical"
-    tools:context=".screens.welcome.WelcomeFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/text_header"
-        style="@style/page_header"
-        android:layout_gravity="center_horizontal"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_margin="@dimen/default_margin"
-        android:text="@string/header_welcome" />
+        android:orientation="vertical"
+        tools:context=".screens.welcome.WelcomeFragment">
 
-    <TextView
-        style="@style/page_content"
-        android:text="@string/welcome_01" />
+        <TextView
+            android:id="@+id/text_header"
+            style="@style/page_header"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/default_margin"
+            android:text="@string/header_welcome" />
 
-    <TextView
-        style="@style/page_content"
-        android:text="@string/welcome_02" />
+        <TextView
+            style="@style/page_content"
+            android:text="@string/welcome_01" />
 
-    <Button
-        android:id="@+id/button_continue_to_instructions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/button_continue" />
-</LinearLayout>
+        <TextView
+            style="@style/page_content"
+            android:text="@string/welcome_02" />
+
+        <Button
+            android:id="@+id/button_continue_to_instructions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/button_continue" />
+    </LinearLayout>
+</layout>
