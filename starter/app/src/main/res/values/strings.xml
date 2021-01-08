@@ -4,11 +4,17 @@
     <!-- Hints -->
     <string name="hint_email">Email:</string>
     <string name="hint_password">Password:</string>
+    <string name="hint_name">Name:</string>
+    <string name="hint_company">Company:</string>
+    <string name="hint_size">Size:</string>
+    <string name="hint_description">Description:</string>
 
     <!-- Buttons -->
     <string name="button_sign_in">Sign In</string>
     <string name="button_sign_up">Sign Up</string>
     <string name="button_continue">Continue</string>
+    <string name="button_save">Save</string>
+    <string name="button_cancel">Cancel</string>
 
     <!-- Screen headers -->
     <string name="header_welcome">Welcome</string>
