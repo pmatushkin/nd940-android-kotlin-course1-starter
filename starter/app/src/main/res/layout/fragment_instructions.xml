@@ -1,32 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="@dimen/default_margin"
-    android:orientation="vertical"
-    tools:context=".screens.instructions.InstructionsFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/text_header"
-        style="@style/page_header"
-        android:layout_gravity="center_horizontal"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_margin="@dimen/default_margin"
-        android:text="@string/header_instructions" />
+        android:orientation="vertical"
+        tools:context=".screens.instructions.InstructionsFragment">
 
-    <TextView
-        style="@style/page_content"
-        android:text="@string/instructions_01" />
+        <TextView
+            android:id="@+id/text_header"
+            style="@style/page_header"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/default_margin"
+            android:text="@string/header_instructions" />
 
-    <TextView
-        style="@style/page_content"
-        android:text="@string/instructions_02" />
+        <TextView
+            style="@style/page_content"
+            android:text="@string/instructions_01" />
 
-    <Button
-        android:id="@+id/button_continue_to_instructions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/button_continue" />
+        <TextView
+            style="@style/page_content"
+            android:text="@string/instructions_02" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/button_continue_to_shoe_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/button_continue" />
+
+    </LinearLayout>
+</layout>

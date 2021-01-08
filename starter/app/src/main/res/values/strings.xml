@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ShoeStore</string>
+    <string name="app_name">Shoe Store</string>
 
     <!-- Hints -->
     <string name="hint_email">Email:</string>
@@ -13,6 +13,8 @@
     <!-- Screen headers -->
     <string name="header_welcome">Welcome</string>
     <string name="header_instructions">Instructions</string>
+    <string name="header_shoe_list">Shoes</string>
+    <string name="header_add_a_shoe">Add a shoe</string>
 
     <!-- Content -->
     <string name="welcome_01">In this project, students will apply their skills in building layouts and navigation files by building a Shoe Store app. They will build an app with four screens.</string>
