@@ -6,10 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentInstructionsBinding
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
+import com.udacity.shoestore.databinding.ShoeLayoutBinding
+import com.udacity.shoestore.viewmodels.MainActivityViewModel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,6 +26,10 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class ShoeListFragment : Fragment() {
+
+    private lateinit var binding: FragmentShoeListBinding
+    private val mViewModel by activityViewModels<MainActivityViewModel>()
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -39,13 +47,25 @@ class ShoeListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val binding = DataBindingUtil.inflate<FragmentShoeListBinding>(
-            inflater, R.layout.fragment_shoe_list, container, false
-        )
+        binding = DataBindingUtil.inflate(
+            inflater
+            , R.layout.fragment_shoe_list
+            , container
+            , false)
 
+        // Set up FAB
         binding.buttonAdd.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.action_shoeListFragment_to_shoeDetailFragment)
-        )
+            Navigation.createNavigateOnClickListener(
+                R.id.action_shoeListFragment_to_shoeDetailFragment))
+
+        // Specify the current activity as the lifecycle owner of the binding. This is used so that
+        // the binding can observe LiveData updates
+        binding.lifecycleOwner = this
+
+        // Set up observers
+        mViewModel.shoeList.observe(viewLifecycleOwner, {
+            displayShoeList()
+        })
 
         return binding.root
     }
@@ -68,5 +88,21 @@ class ShoeListFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    private fun displayShoeList() {
+        val layoutShoeList = binding.shoeList
+
+        for (shoe in mViewModel.shoeList.value!!) {
+            val shoeBinding = DataBindingUtil.inflate<ShoeLayoutBinding>(
+                layoutInflater,
+                R.layout.shoe_layout,
+                layoutShoeList,
+                false
+            )
+            shoeBinding.shoe = shoe
+
+            layoutShoeList.addView(shoeBinding.root)
+        }
     }
 }
