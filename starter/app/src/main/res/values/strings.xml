@@ -1,3 +1,36 @@
 <resources>
-    <string name="app_name">ShoeStore</string>
+    <string name="app_name">Shoe Store</string>
+
+    <!-- Hints -->
+    <string name="hint_email">Email:</string>
+    <string name="hint_password">Password:</string>
+    <string name="hint_name">Name:</string>
+    <string name="hint_company">Company:</string>
+    <string name="hint_size">Size:</string>
+    <string name="hint_description">Description:</string>
+
+    <!-- Buttons -->
+    <string name="button_sign_in">Sign In</string>
+    <string name="button_sign_up">Sign Up</string>
+    <string name="button_continue">Continue</string>
+    <string name="button_save">Save</string>
+    <string name="button_cancel">Cancel</string>
+
+    <!-- Menus -->
+    <string name="menu_logout">Log out</string>
+
+    <!-- Screen headers -->
+    <string name="header_welcome">Welcome</string>
+    <string name="header_instructions">Instructions</string>
+    <string name="header_shoe_list">Shoes</string>
+    <string name="header_add_a_shoe">Add a shoe</string>
+
+    <!-- Content -->
+    <string name="welcome_01">In this project, students will apply their skills in building layouts and navigation files by building a Shoe Store app. They will build an app with four screens.</string>
+    <string name="welcome_02">While the login and onboarding pages will not do anything, the user will need to save the login state so that the login and onboarding pages do not show again.</string>
+    <string name="instructions_01">The goal is to build an app that challenges you on the layouts and the navigation features. Following the project steps should accomplish this project with a successful build. Once done, you can either submit the code in a zip file format or through your github repo, either are acceptable.</string>
+    <string name="instructions_02">Before you submit your project, please check your work against the project rubric. Your reviewer will be using this rubric to assess your project work.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

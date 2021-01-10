@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe" />
+    </data>
+
+    <!-- Simple linear list item layout is built with a vertical LinearLayout -->
+    <!-- Another choice is ConstraintLayout, if we want something fancier -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_name"
+            style="@style/shoe_detail_header"
+            android:text="@{shoe.name}"
+            tools:text="Air Zoom Pegasus 37" />
+
+        <TextView
+            android:id="@+id/text_company"
+            style="@style/shoe_detail_content"
+            android:text="@{shoe.company}"
+            tools:text="Nike" />
+
+        <TextView
+            android:id="@+id/text_size"
+            style="@style/shoe_detail_content"
+            android:text="@{Double.toString(shoe.size)}"
+            tools:text="10.0" />
+
+        <TextView
+            android:id="@+id/text_description"
+            style="@style/shoe_detail_content"
+            android:text="@{shoe.description}"
+            tools:text="From the indoor track to the treadmill, these running shoes will take your running routine further than ever before" />
+
+    </LinearLayout>
+
+</layout>
