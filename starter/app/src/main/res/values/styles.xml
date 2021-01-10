@@ -17,28 +17,23 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="page_header">
+    <style name="default_text_style">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:fontFamily">@font/roboto</item>
-        <item name="android:textSize">30sp</item>
         <item name="android:layout_marginBottom">@dimen/default_margin</item>
     </style>
 
-    <style name="page_content">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:fontFamily">@font/roboto</item>
+    <style name="page_content" parent="default_text_style">
         <item name="android:textSize">20sp</item>
-        <item name="android:layout_marginBottom">@dimen/default_margin</item>
     </style>
 
-    <style name="shoe_detail_content">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:fontFamily">@font/roboto</item>
+    <style name="page_header" parent="page_content">
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="shoe_detail_content" parent="default_text_style">
         <item name="android:textSize">16sp</item>
-        <item name="android:layout_marginBottom">@dimen/default_margin</item>
     </style>
 
     <style name="shoe_detail_header" parent="shoe_detail_content">
