@@ -13,6 +13,8 @@ class MainActivityViewModel : ViewModel() {
     init {
         // Build a sample list of shoes
         val shoes: ArrayList<Shoe> = ArrayList()
+
+        // Attribution note: name, company, and description strings below are copied from Zappos web site
         shoes.add(
             Shoe(
                 "Air Zoom Pegasus 37",
