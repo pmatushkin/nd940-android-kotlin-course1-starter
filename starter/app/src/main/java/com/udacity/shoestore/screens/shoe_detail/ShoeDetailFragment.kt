@@ -6,10 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
+import com.udacity.shoestore.models.Shoe
+import com.udacity.shoestore.viewmodels.MainActivityViewModel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,6 +26,10 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class ShoeDetailFragment : Fragment() {
+
+    private lateinit var binding: FragmentShoeDetailBinding
+    private val mViewModel by activityViewModels<MainActivityViewModel>()
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -39,15 +47,29 @@ class ShoeDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val binding = DataBindingUtil.inflate<FragmentShoeDetailBinding>(
+        binding = DataBindingUtil.inflate<FragmentShoeDetailBinding>(
             inflater, R.layout.fragment_shoe_detail, container, false
         )
+
+        binding.buttonSave.setOnClickListener {
+            saveShoeDetails()
+            findNavController().navigate(R.id.action_shoeDetailFragment_to_shoeListFragment)
+        }
 
         binding.buttonCancel.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_shoeDetailFragment_to_shoeListFragment)
         )
 
         return binding.root
+    }
+
+    private fun saveShoeDetails() {
+        val name = binding.editName.text.toString()
+        val size = binding.editSize.text.toString().toDoubleOrNull()
+        val company = binding.editCompany.text.toString()
+        val description = binding.editDescription.text.toString()
+
+        mViewModel.shoeList.value?.add(Shoe(name, size?: 0.0, company, description))
     }
 
     companion object {
