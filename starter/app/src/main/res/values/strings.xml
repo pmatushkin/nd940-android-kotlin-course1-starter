@@ -16,6 +16,9 @@
     <string name="button_save">Save</string>
     <string name="button_cancel">Cancel</string>
 
+    <!-- Menus -->
+    <string name="menu_logout">Log out</string>
+
     <!-- Screen headers -->
     <string name="header_welcome">Welcome</string>
     <string name="header_instructions">Instructions</string>
