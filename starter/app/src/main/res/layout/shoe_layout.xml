@@ -9,6 +9,8 @@
             type="com.udacity.shoestore.models.Shoe" />
     </data>
 
+    <!-- Simple linear list item layout is built with a vertical LinearLayout -->
+    <!-- Another choice is ConstraintLayout, if we want something fancier -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
