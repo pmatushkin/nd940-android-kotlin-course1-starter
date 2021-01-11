@@ -18,6 +18,7 @@ class ShoeDetailFragment : Fragment() {
 
     private lateinit var binding: FragmentShoeDetailBinding
     private val mViewModel by activityViewModels<MainActivityViewModel>()
+    private val shoe = Shoe("", 0.0, "", "")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,6 +28,8 @@ class ShoeDetailFragment : Fragment() {
         binding = DataBindingUtil.inflate<FragmentShoeDetailBinding>(
             inflater, R.layout.fragment_shoe_detail, container, false
         )
+
+        binding.shoe = shoe
 
         binding.buttonSave.setOnClickListener {
             saveShoeDetails()
@@ -41,11 +44,6 @@ class ShoeDetailFragment : Fragment() {
     }
 
     private fun saveShoeDetails() {
-        val name = binding.editName.text.toString()
-        val size = binding.editSize.text.toString().toDoubleOrNull()
-        val company = binding.editCompany.text.toString()
-        val description = binding.editDescription.text.toString()
-
-        mViewModel.shoeList.value?.add(Shoe(name, size ?: 0.0, company, description))
+        mViewModel.shoeList.value?.add(shoe)
     }
 }
